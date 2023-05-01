@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 
 from ii import predict_diagnosis
+from tkinter import messagebox
 
 
 class Application(tk.Frame):
@@ -95,9 +96,9 @@ class Application(tk.Frame):
 
         # передаем данные в функцию для определения диагноза
         diagnosis = predict_diagnosis(age, gender, allergy, complications, difficulty, diagnosis)
-
+        messagebox.showinfo(title=diagnosis, message=diagnosis)
         # выводим диагноз на метку
-        self.diagnosis_label.config(text=diagnosis)
+        #self.diagnosis_label.config(text=diagnosis)
 
 # создаем окно и запускаем приложение
 root = tk.Tk()
